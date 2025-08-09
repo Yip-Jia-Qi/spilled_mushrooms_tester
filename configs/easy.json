@@ -1,0 +1,26 @@
+{
+  "critters": [
+    "crocodile",
+    "grizzly",
+    "penguin",
+    "rhino",
+    "crocodile",
+    "grizzly",
+    "penguin",
+    "rhino"
+  ],
+  "locations": [
+    {
+      "type": "beach",
+      "mushrooms": 10
+    },
+    {
+      "type": "canyon",
+      "mushrooms": 10
+    },
+    {
+      "type": "jungle",
+      "mushrooms": 8
+    }
+  ]
+}

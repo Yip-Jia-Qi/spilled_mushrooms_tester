@@ -1,0 +1,26 @@
+{
+  "critters": [
+    "rhino",
+    "rhino",
+    "sheep",
+    "sheep",
+    "penguin",
+    "penguin",
+    "gopher",
+    "goose"
+  ],
+  "locations": [
+    {
+      "type": "beach",
+      "mushrooms": 15
+    },
+    {
+      "type": "canyon",
+      "mushrooms": 15
+    },
+    {
+      "type": "jungle",
+      "mushrooms": 10
+    }
+  ]
+}
