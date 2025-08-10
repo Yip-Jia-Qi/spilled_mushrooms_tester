@@ -1,0 +1,21 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:38:52
+============================================================
+
+Test session logging to: tests/logs/test_original_scenario.txt
+Testing original scenario from game log...
+=============================================
+Gopher at Beach: Gopher (3/3) at location 0
+Canyon: 3 Geese (full)
+Jungle: 0 critters (empty)
+Queue: 0/8 (cleared for test)
+
+--- End of Day 6 → Day 7 ---
+Expected: Gopher should move Beach → Canyon (full) → skip to Jungle
+Result: Gopher moved to jungle: Gopher (3/3) at location 2
+✅ SUCCESS! Gopher correctly skipped full Canyon and moved to Jungle
+🎉 This fixes the original disappearance bug!
+
+
+============================================================
+Ended at: 2025-08-10 13:38:52

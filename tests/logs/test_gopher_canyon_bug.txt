@@ -1,0 +1,21 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:26:40
+============================================================
+
+Test session logging to: tests/logs/test_gopher_canyon_bug.txt
+Testing Gopher Canyon bonus bug fix...
+==================================================
+Initial queue:
+  0: Crocodile (3/2)
+  1: Crocodile (3/2)
+  2: Grizzly (3/2)
+  3: Grizzly (3/2)
+  4: Penguin (2/3)
+  5: Rhino (1/4)
+  6: Goose (1/2)
+  7: Frog (1/5)
+❌ No Gopher found in queue!
+
+
+============================================================
+Ended at: 2025-08-10 13:26:40

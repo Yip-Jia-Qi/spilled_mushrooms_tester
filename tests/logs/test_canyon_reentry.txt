@@ -1,0 +1,22 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:27:24
+============================================================
+
+Test session logging to: tests/logs/test_canyon_reentry.txt
+Testing Canyon re-entry bonus...
+==================================================
+Initial Gopher: Gopher (1/4)
+After first Canyon visit: Gopher (2/5) at location 1
+✅ First Canyon visit: got +1 mushrooms per day
+
+--- Moving Gopher from Canyon to Jungle ---
+Gopher at Jungle: Gopher (2/4) at location 2
+
+--- Moving Gopher back to Canyon (testing bug fix) ---
+After second Canyon visit: Gopher (3/5) at location 1
+✅ Second Canyon visit: got another +1 mushrooms per day
+🎉 Bug fix working! Location effects applied on re-entry.
+
+
+============================================================
+Ended at: 2025-08-10 13:27:24

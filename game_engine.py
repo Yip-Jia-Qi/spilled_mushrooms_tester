@@ -223,6 +223,9 @@ class GameEngine:
         
         # Process gopher movements
         for gopher, current_loc_id in gophers_to_move:
+            moved = False
+            
+            # Try next location first
             next_loc_id = (current_loc_id + 1) % 3
             target_location = self.locations[next_loc_id]
             
@@ -233,8 +236,27 @@ class GameEngine:
                 target_location.critters.append(gopher)
                 # Apply Rhino/Sheep effects when Gopher enters new location
                 self._apply_rhino_sheep_effects(gopher, target_location)
+                # Apply location effects when Gopher enters new location
+                self._apply_location_effects(gopher, target_location)
+                moved = True
             else:
-                # Next location is full, try to add to queue
+                # Next location is full, try the one after that (skip)
+                skip_loc_id = (current_loc_id + 2) % 3
+                skip_location = self.locations[skip_loc_id]
+                
+                if not skip_location.is_full():
+                    # Move to the location after next (skip the full one)
+                    self.locations[current_loc_id].critters.remove(gopher)
+                    gopher.current_location_id = skip_loc_id
+                    skip_location.critters.append(gopher)
+                    # Apply Rhino/Sheep effects when Gopher enters new location
+                    self._apply_rhino_sheep_effects(gopher, skip_location)
+                    # Apply location effects when Gopher enters new location
+                    self._apply_location_effects(gopher, skip_location)
+                    moved = True
+            
+            # If couldn't move to either location, try to add to queue
+            if not moved:
                 if len(self.critter_queue) < 8:
                     self.locations[current_loc_id].critters.remove(gopher)
                     gopher.current_location_id = None

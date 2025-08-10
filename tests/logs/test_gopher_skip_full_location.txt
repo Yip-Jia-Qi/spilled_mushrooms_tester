@@ -1,0 +1,21 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:37:57
+============================================================
+
+Test session logging to: tests/logs/test_gopher_skip_full_location.txt
+Testing Gopher skipping full location...
+==================================================
+Gopher placed at Beach: Gopher (1/4) at location 0
+Canyon filled: 3/3 critters
+Canyon is full: True
+Jungle is full: False
+
+--- Applying end-of-day effects ---
+Gopher should move: Beach -> Canyon (full) -> skip to Jungle
+Gopher after movement: Gopher (1/4) at location 2 at jungle (location 2)
+✅ Success! Gopher skipped full Canyon and moved to Jungle
+🎉 Bug fix working! Gopher can skip full locations.
+
+
+============================================================
+Ended at: 2025-08-10 13:37:57

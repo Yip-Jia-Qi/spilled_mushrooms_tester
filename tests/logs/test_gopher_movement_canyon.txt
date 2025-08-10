@@ -1,0 +1,17 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:27:46
+============================================================
+
+Test session logging to: tests/logs/test_gopher_movement_canyon.txt
+Testing Gopher automatic movement with Canyon bonus...
+============================================================
+Gopher placed at Beach: Gopher (1/4) at location 0
+
+--- Applying end-of-day effects (Gopher should move Beach -> Canyon) ---
+Gopher after movement: Gopher (2/5) at location 1 at canyon
+✅ Gopher moved to Canyon and got +1 mushrooms per day bonus
+🎉 Bug fix working! Automatic movement triggers location effects.
+
+
+============================================================
+Ended at: 2025-08-10 13:27:46

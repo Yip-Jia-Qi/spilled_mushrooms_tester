@@ -1,0 +1,23 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:38:28
+============================================================
+
+Test session logging to: tests/logs/test_gopher_both_locations_full.txt
+Testing Gopher when both next locations are full...
+=======================================================
+Gopher placed at Beach: Gopher (1/4) at location 0
+Canyon filled: 3/3 critters
+Jungle filled: 3/3 critters
+Canyon is full: True
+Jungle is full: True
+Current queue size: 8/8
+
+--- Applying end-of-day effects ---
+Gopher should try: Beach -> Canyon (full) -> Jungle (full) -> queue
+After movement, queue size: 8/8
+❌ Gopher found at beach: Gopher (1/4) at location 0
+Expected: Gopher should be in queue, not at a location
+
+
+============================================================
+Ended at: 2025-08-10 13:38:28

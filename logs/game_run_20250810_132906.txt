@@ -1,0 +1,230 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:29:06
+============================================================
+
+Game session logging to: logs/game_run_20250810_132906.txt
+🍄 Welcome to Spilled Mushrooms! 🍄
+Collect all mushrooms within 7 days to win!
+Type 'help' during any turn to see critter abilities.
+
+============================================================
+DAY 1/7 - Spilled Mushrooms
+Total mushrooms remaining: 56
+============================================================
+
+LOCATIONS:
+  1. Beach: 20 mushrooms [Empty]
+  2. Canyon: 21 mushrooms [Empty]
+  3. Jungle: 15 mushrooms [Empty]
+
+AVAILABLE CRITTERS:
+  1. Grizzly (3/2)
+  2. Gopher (1/4)
+
+VALID MOVES:
+  1. Send Grizzly to Beach
+  2. Send Grizzly to Canyon
+  3. Send Grizzly to Jungle
+  4. Send Gopher to Beach
+  5. Send Gopher to Canyon
+  6. Send Gopher to Jungle
+
+Choose move (1-6) or 'help' for abilities: 
+Turn Summary:
+Sent Gopher to Canyon
+
+Press Enter to continue...
+============================================================
+DAY 2/7 - Spilled Mushrooms
+Total mushrooms remaining: 54
+============================================================
+
+LOCATIONS:
+  1. Beach: 20 mushrooms [Empty]
+  2. Canyon: 19 mushrooms [Empty]
+  3. Jungle: 15 mushrooms [Gopher(2/4)]
+
+AVAILABLE CRITTERS:
+  1. Penguin (2/3)
+  2. Goose (1/2)
+
+VALID MOVES:
+  1. Send Penguin to Beach
+  2. Send Penguin to Canyon
+  3. Send Penguin to Jungle
+  4. Send Goose to Beach
+  5. Send Goose to Canyon
+  6. Send Goose to Jungle
+
+Choose move (1-6) or 'help' for abilities: 
+Turn Summary:
+Sent Penguin to Beach
+
+Press Enter to continue...
+============================================================
+DAY 3/7 - Spilled Mushrooms
+Total mushrooms remaining: 50
+============================================================
+
+LOCATIONS:
+  1. Beach: 18 mushrooms [Penguin(2/3), Gopher(2/4)]
+  2. Canyon: 19 mushrooms [Empty]
+  3. Jungle: 13 mushrooms [Empty]
+
+AVAILABLE CRITTERS:
+  1. Frog (1/5)
+  2. Crocodile (3/2)
+
+VALID MOVES:
+  1. Send Frog to Beach
+  2. Send Frog to Canyon
+  3. Send Frog to Jungle
+  4. Send Crocodile to Beach
+  5. Send Crocodile to Canyon
+  6. Send Crocodile to Jungle
+
+Choose move (1-6) or 'help' for abilities: 
+Turn Summary:
+Sent Crocodile to Jungle
+
+Press Enter to continue...
+============================================================
+DAY 4/7 - Spilled Mushrooms
+Total mushrooms remaining: 43
+============================================================
+
+LOCATIONS:
+  1. Beach: 14 mushrooms [Penguin(2/3)]
+  2. Canyon: 19 mushrooms [Gopher(3/4)]
+  3. Jungle: 10 mushrooms [Crocodile(3/1)]
+
+AVAILABLE CRITTERS:
+  1. Rhino (1/4)
+  2. Sheep (1/4)
+
+VALID MOVES:
+  1. Send Rhino to Beach
+  2. Send Rhino to Canyon
+  3. Send Rhino to Jungle
+  4. Send Sheep to Beach
+  5. Send Sheep to Canyon
+  6. Send Sheep to Jungle
+
+Choose move (1-6) or 'help' for abilities: 
+Turn Summary:
+Sent Rhino to Beach
+
+Press Enter to continue...
+============================================================
+DAY 5/7 - Spilled Mushrooms
+Total mushrooms remaining: 34
+============================================================
+
+LOCATIONS:
+  1. Beach: 11 mushrooms [Penguin(2/3), Rhino(1/4)]
+  2. Canyon: 16 mushrooms [Empty]
+  3. Jungle: 7 mushrooms [Gopher(3/3)]
+
+AVAILABLE CRITTERS:
+  1. Grizzly (3/2)
+  2. Goose (1/2)
+
+VALID MOVES:
+  1. Send Grizzly to Beach
+  2. Send Grizzly to Canyon
+  3. Send Grizzly to Jungle
+  4. Send Goose to Beach
+  5. Send Goose to Canyon
+  6. Send Goose to Jungle
+
+Choose move (1-6) or 'help' for abilities: 
+Turn Summary:
+Sent Goose to Canyon
+
+Press Enter to continue...
+============================================================
+DAY 6/7 - Spilled Mushrooms
+Total mushrooms remaining: 22
+============================================================
+
+LOCATIONS:
+  1. Beach: 8 mushrooms [Penguin(2/3), Rhino(2/4), Gopher(3/3)]
+  2. Canyon: 10 mushrooms [Goose(2/2), Goose(2/2), Goose(2/2)]
+  3. Jungle: 4 mushrooms [Empty]
+
+AVAILABLE CRITTERS:
+  1. Frog (1/5)
+  2. Sheep (1/4)
+
+VALID MOVES:
+  1. Send Frog to Jungle
+  2. Send Sheep to Jungle
+
+Choose move (1-2) or 'help' for abilities: 
+Turn Summary:
+Sent Frog to Jungle
+
+Press Enter to continue...
+============================================================
+DAY 7/7 - Spilled Mushrooms
+Total mushrooms remaining: 9
+============================================================
+
+LOCATIONS:
+  1. Beach: 1 mushrooms [Penguin(2/3), Rhino(2/4)]
+  2. Canyon: 4 mushrooms [Goose(2/1), Goose(2/1), Goose(2/1)]
+  3. Jungle: 4 mushrooms [Frog(1/4)]
+
+AVAILABLE CRITTERS:
+  1. Grizzly (3/2)
+  2. Sheep (1/4)
+
+VALID MOVES:
+  1. Send Grizzly to Beach
+  2. Send Grizzly to Jungle
+  3. Send Sheep to Beach
+  4. Send Sheep to Jungle
+
+Choose move (1-4) or 'help' for abilities: 
+Turn Summary:
+Sent Grizzly to Jungle
+
+Press Enter to continue...
+============================================================
+💀 GAME OVER 💀
+Time ran out with 1 mushrooms remaining.
+Final day: 7/7
+============================================================
+
+🍄 MUSHROOM COLLECTION SUMMARY 🍄
+------------------------------------------------------------
+Animal Type  Count Total Collected Average 
+--------------------------------------------------
+Goose        3     16              5.3     
+Gopher       1     15              15.0    
+Penguin      1     11              11.0    
+Crocodile    1     6               6.0     
+Rhino        1     4               4.0     
+Grizzly      1     3               3.0     
+Frog         1     0               0.0     
+Sheep        1     0               0.0     
+--------------------------------------------------
+TOTAL              55             
+
+🏆 TOP PERFORMERS:
+----------------------------------------
+1. Gopher - 15 mushrooms
+2. Penguin - 11 mushrooms (at Beach)
+3. Goose - 6 mushrooms (at Canyon)
+4. Crocodile - 6 mushrooms (at Jungle)
+5. Goose - 6 mushrooms (at Canyon)
+
+🐌 BENCH WARMERS (0 mushrooms collected):
+----------------------------------------
+  1 Frog
+  1 Sheep
+============================================================
+
+
+============================================================
+Ended at: 2025-08-10 13:29:56

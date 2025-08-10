@@ -1,0 +1,136 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:26:45
+============================================================
+
+Simple game session logging to: logs/game_run_20250810_132645.txt
+🍄 Spilled Mushrooms - Simple Demo 🍄
+============================================================
+
+DAY 1/7
+Total mushrooms remaining: 56
+
+Locations:
+  Beach: 20 mushrooms [Empty]
+  Canyon: 21 mushrooms [Empty]
+  Jungle: 15 mushrooms [Empty]
+
+Available critters:
+  1. Rhino (1/4)
+  2. Gopher (1/4)
+
+Move 1: Sending Rhino to Beach
+------------------------------------------------------------
+
+DAY 2/7
+Total mushrooms remaining: 55
+
+Locations:
+  Beach: 19 mushrooms [Rhino(1/4)]
+  Canyon: 21 mushrooms [Empty]
+  Jungle: 15 mushrooms [Empty]
+
+Available critters:
+  1. Sheep (1/4)
+  2. Rhino (1/4)
+
+Move 2: Sending Sheep to Beach
+------------------------------------------------------------
+
+DAY 3/7
+Total mushrooms remaining: 52
+
+Locations:
+  Beach: 16 mushrooms [Rhino(2/4), Sheep(1/4)]
+  Canyon: 21 mushrooms [Empty]
+  Jungle: 15 mushrooms [Empty]
+
+Available critters:
+  1. Sheep (1/4)
+  2. Penguin (2/3)
+
+Move 3: Sending Sheep to Beach
+------------------------------------------------------------
+
+DAY 4/7
+Total mushrooms remaining: 47
+
+Locations:
+  Beach: 11 mushrooms [Rhino(3/4), Sheep(1/5), Sheep(1/4)]
+  Canyon: 21 mushrooms [Empty]
+  Jungle: 15 mushrooms [Empty]
+
+Available critters:
+  1. Grizzly (3/2)
+  2. Grizzly (3/2)
+
+Move 4: Sending Grizzly to Canyon
+------------------------------------------------------------
+
+DAY 5/7
+Total mushrooms remaining: 38
+
+Locations:
+  Beach: 6 mushrooms [Rhino(3/4), Sheep(1/5), Sheep(1/4)]
+  Canyon: 17 mushrooms [Grizzly(4/2)]
+  Jungle: 15 mushrooms [Empty]
+
+Available critters:
+  1. Gopher (1/4)
+  2. Rhino (1/4)
+
+Move 5: Sending Gopher to Canyon
+------------------------------------------------------------
+
+DAY 6/7
+Total mushrooms remaining: 27
+
+Locations:
+  Beach: 1 mushrooms [Rhino(3/4), Sheep(1/5), Sheep(1/4)]
+  Canyon: 11 mushrooms [Grizzly(4/1)]
+  Jungle: 15 mushrooms [Gopher(2/4)]
+
+Available critters:
+  1. Penguin (2/3)
+  2. Grizzly (3/2)
+
+Move 6: Sending Penguin to Canyon
+------------------------------------------------------------
+
+DAY 7/7
+Total mushrooms remaining: 17
+
+Locations:
+  Canyon: 4 mushrooms [Penguin(3/3)]
+  Jungle: 13 mushrooms [Empty]
+
+Available critters:
+  1. Rhino (1/4)
+  2. Grizzly (3/2)
+
+Move 7: Sending Rhino to Beach
+------------------------------------------------------------
+
+FINAL STATE:
+Day 8/7
+Total mushrooms remaining: 14
+💀 GAME OVER - Time ran out! 💀
+
+Final locations:
+  Canyon: 1 mushrooms [Penguin(3/2)]
+  Jungle: 13 mushrooms [Empty]
+
+🍄 MUSHROOM COLLECTION SUMMARY 🍄
+------------------------------------------------------------
+Animal Type  Count Total Collected Average 
+--------------------------------------------------
+Rhino        2     13              6.5     
+Grizzly      2     12              6.0     
+Sheep        2     7               3.5     
+Penguin      1     6               6.0     
+Gopher       1     4               4.0     
+--------------------------------------------------
+TOTAL              42             
+
+
+============================================================
+Ended at: 2025-08-10 13:26:45
