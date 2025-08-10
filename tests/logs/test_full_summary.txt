@@ -1,0 +1,45 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:12:55
+============================================================
+
+Test session logging to: tests/logs/test_full_summary.txt
+Testing full detailed summary...
+
+============================================================
+💀 GAME OVER 💀
+Time ran out with 56 mushrooms remaining.
+Final day: 7/7
+============================================================
+
+🍄 MUSHROOM COLLECTION SUMMARY 🍄
+------------------------------------------------------------
+Animal Type  Count Total Collected Average 
+--------------------------------------------------
+Frog         2     27              13.5    
+Rhino        1     8               8.0     
+Sheep        1     5               5.0     
+Penguin      1     2               2.0     
+Crocodile    1     0               0.0     
+Grizzly      1     0               0.0     
+Goose        1     0               0.0     
+--------------------------------------------------
+TOTAL              42             
+
+🏆 TOP PERFORMERS:
+----------------------------------------
+1. Frog - 15 mushrooms (at Beach)
+2. Frog - 12 mushrooms (at Canyon)
+3. Rhino - 8 mushrooms
+4. Sheep - 5 mushrooms
+5. Penguin - 2 mushrooms
+
+🐌 BENCH WARMERS (0 mushrooms collected):
+----------------------------------------
+  1 Crocodile
+  1 Grizzly
+  1 Goose
+============================================================
+
+
+============================================================
+Ended at: 2025-08-10 13:12:55

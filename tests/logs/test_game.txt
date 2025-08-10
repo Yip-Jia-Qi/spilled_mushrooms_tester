@@ -1,0 +1,46 @@
+Spilled Mushrooms Game Log
+Started at: 2025-08-10 13:12:59
+============================================================
+
+Test session logging to: tests/logs/test_game.txt
+Testing Spilled Mushrooms Game Engine...
+Initial state - Day: 1, Total mushrooms: 56
+
+Initial Locations:
+  0: Beach: 20 mushrooms [Empty]
+  1: Canyon: 21 mushrooms [Empty]
+  2: Jungle: 15 mushrooms [Empty]
+
+Initial Queue (first 2):
+  0: Crocodile (3/2)
+  1: Grizzly (3/2)
+
+==================================================
+TESTING MOVES
+==================================================
+Valid moves: [(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]
+
+Move 1: Sending Crocodile to Beach
+After Move 1 - Day: 2, Total mushrooms: 53
+  Beach: 17 mushrooms [Crocodile(3/2)]
+
+Move 2: Sending Penguin to Beach
+After Move 2 - Day: 3, Total mushrooms: 51
+  Beach: 15 mushrooms [Crocodile(3/2), Penguin(2/3)]
+
+Game Over: False, Game Won: False
+Basic functionality test completed!
+
+==================================================
+TESTING CRITTER ABILITIES
+==================================================
+Testing Penguin at Canyon...
+Penguin before: Penguin (2/3)
+Penguin after Canyon: Penguin (3/3) at location 1
+Expected: Penguin should have 3 mushrooms and 4 lifespan
+(Canyon gives both stats, so Penguin swap doesn't change the result)
+Specific ability test completed!
+
+
+============================================================
+Ended at: 2025-08-10 13:12:59

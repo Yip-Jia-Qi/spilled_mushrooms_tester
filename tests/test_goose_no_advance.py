@@ -3,6 +3,11 @@
 Test Goose duplicates get location effects without advancing day
 """
 
+
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from game_engine import GameEngine
 from models import Critter, CritterType, LocationType
 from collections import deque

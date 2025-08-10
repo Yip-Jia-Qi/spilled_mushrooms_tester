@@ -3,7 +3,12 @@
 Test the full detailed summary display
 """
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from game_ui import GameUI
+from logger import logged_output
 
 
 def test_full_summary():
@@ -40,4 +45,6 @@ def test_full_summary():
 
 
 if __name__ == "__main__":
-    test_full_summary()
+    with logged_output(os.path.join("tests", "logs", "test_full_summary.txt")) as log_path:
+        print(f"Test session logging to: {log_path}")
+        test_full_summary()

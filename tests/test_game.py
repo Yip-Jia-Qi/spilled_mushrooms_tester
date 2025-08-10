@@ -3,8 +3,14 @@
 Test script to verify game mechanics work correctly
 """
 
+
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from game_engine import GameEngine
 from models import CritterType, LocationType
+from logger import logged_output
 
 
 def test_basic_functionality():
@@ -111,5 +117,7 @@ def test_specific_critter_abilities():
 
 
 if __name__ == "__main__":
-    test_basic_functionality()
-    test_specific_critter_abilities()
+    with logged_output(os.path.join("tests", "logs", "test_game.txt")) as log_path:
+        print(f"Test session logging to: {log_path}")
+        test_basic_functionality()
+        test_specific_critter_abilities()

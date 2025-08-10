@@ -8,6 +8,7 @@ Run this file to start playing the game.
 import sys
 import os
 from game_ui import GameUI
+from logger import logged_output
 
 
 def main():
@@ -24,14 +25,16 @@ def main():
             print(f"Config file not found: {config_path}")
             print("Using default configuration...")
     
-    try:
-        game = GameUI(config)
-        game.play_game()
-    except KeyboardInterrupt:
-        print("\n\nThanks for playing Spilled Mushrooms!")
-    except Exception as e:
-        print(f"\nAn error occurred: {e}")
-        print("Please report this bug!")
+    with logged_output() as log_path:
+        print(f"Game session logging to: {log_path}")
+        try:
+            game = GameUI(config)
+            game.play_game()
+        except KeyboardInterrupt:
+            print("\n\nThanks for playing Spilled Mushrooms!")
+        except Exception as e:
+            print(f"\nAn error occurred: {e}")
+            print("Please report this bug!")
 
 
 if __name__ == "__main__":
