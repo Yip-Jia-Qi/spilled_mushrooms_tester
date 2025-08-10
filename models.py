@@ -28,6 +28,7 @@ class Critter:
     current_mushrooms_per_day: int = 0
     current_lifespan: int = 0
     current_location_id: Optional[int] = None
+    mushrooms_collected: int = 0  # Track total mushrooms collected by this critter
     
     def __post_init__(self):
         if self.current_mushrooms_per_day == 0:

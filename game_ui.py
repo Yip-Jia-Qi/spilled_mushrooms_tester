@@ -126,6 +126,68 @@ class GameUI:
         
         print(f"Final day: {state['day']-1}/7")
         print("="*60)
+        
+        # Display collection summary
+        self.display_collection_summary()
+    
+    def display_collection_summary(self):
+        """Display summary of mushrooms collected by each animal"""
+        summary = self.engine.get_collection_summary()
+        
+        print("\n🍄 MUSHROOM COLLECTION SUMMARY 🍄")
+        print("-" * 60)
+        
+        # Sort by total collected (descending)
+        sorted_types = sorted(summary['by_type'].items(), 
+                             key=lambda x: x[1]['total_collected'], 
+                             reverse=True)
+        
+        print(f"{'Animal Type':<12} {'Count':<5} {'Total Collected':<15} {'Average':<8}")
+        print("-" * 50)
+        
+        for critter_type, data in sorted_types:
+            count = data['count']
+            total = data['total_collected']
+            average = total / count if count > 0 else 0
+            print(f"{critter_type:<12} {count:<5} {total:<15} {average:<8.1f}")
+        
+        print("-" * 50)
+        print(f"{'TOTAL':<12} {'':<5} {summary['total_collected']:<15}")
+        
+        # Show top performers
+        individual = summary['individual']
+        top_performers = sorted([c for c in individual if c['collected'] > 0], 
+                              key=lambda x: x['collected'], 
+                              reverse=True)
+        
+        if top_performers:
+            print(f"\n🏆 TOP PERFORMERS:")
+            print("-" * 40)
+            for i, performer in enumerate(top_performers[:5]):  # Show top 5
+                location_name = ""
+                if performer['location'] is not None:
+                    locations = ['Beach', 'Canyon', 'Jungle']
+                    location_name = f" (at {locations[performer['location']]})"
+                
+                print(f"{i+1}. {performer['type']} - {performer['collected']} mushrooms{location_name}")
+        
+        # Show animals that didn't collect anything
+        non_collectors = [c for c in individual if c['collected'] == 0]
+        if non_collectors:
+            print(f"\n🐌 BENCH WARMERS (0 mushrooms collected):")
+            print("-" * 40)
+            bench_by_type = {}
+            for critter in non_collectors:
+                critter_type = critter['type']
+                if critter_type not in bench_by_type:
+                    bench_by_type[critter_type] = 0
+                bench_by_type[critter_type] += 1
+            
+            for critter_type, count in bench_by_type.items():
+                plural = "s" if count > 1 else ""
+                print(f"  {count} {critter_type}{plural}")
+        
+        print("=" * 60)
     
     def play_game(self):
         """Main game loop"""

@@ -67,6 +67,34 @@ def play_simple_game(config=None):
     for location in state['locations']:
         if location.mushrooms > 0 or location.critters:
             print(f"  {location}")
+    
+    # Show collection summary
+    display_collection_summary(engine)
+
+
+def display_collection_summary(engine):
+    """Display summary of mushrooms collected by each animal"""
+    summary = engine.get_collection_summary()
+    
+    print("\n🍄 MUSHROOM COLLECTION SUMMARY 🍄")
+    print("-" * 60)
+    
+    # Sort by total collected (descending)
+    sorted_types = sorted(summary['by_type'].items(), 
+                         key=lambda x: x[1]['total_collected'], 
+                         reverse=True)
+    
+    print(f"{'Animal Type':<12} {'Count':<5} {'Total Collected':<15} {'Average':<8}")
+    print("-" * 50)
+    
+    for critter_type, data in sorted_types:
+        count = data['count']
+        total = data['total_collected']
+        average = total / count if count > 0 else 0
+        print(f"{critter_type:<12} {count:<5} {total:<15} {average:<8.1f}")
+    
+    print("-" * 50)
+    print(f"{'TOTAL':<12} {'':<5} {summary['total_collected']:<15}")
 
 
 if __name__ == "__main__":

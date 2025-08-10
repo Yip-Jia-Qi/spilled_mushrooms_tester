@@ -15,8 +15,12 @@ class GameEngine:
         self.day = 1
         self.locations = self._init_locations(config)
         self.critter_queue = deque(self._init_critters(config))
+        self.all_critters_ever = []  # Track all critters for summary
         self.game_over = False
         self.game_won = False
+        
+        # Add initial critters to the full history
+        self.all_critters_ever.extend(self.critter_queue)
     
     def _init_locations(self, config=None) -> List[Location]:
         """Initialize locations from config or use defaults"""
@@ -117,12 +121,25 @@ class GameEngine:
                 goose_copy = Critter(CritterType.GOOSE, 1, 2)
                 goose_copy.current_location_id = location.id
                 location.critters.append(goose_copy)
+                
+                # Track the new critter
+                self.all_critters_ever.append(goose_copy)
+                
+                # Apply location effects to the duplicate (they are "entering" the location)
+                self._apply_location_effects(goose_copy, location)
+                
+                # Apply Rhino/Sheep effects for the duplicate entering
+                self._apply_rhino_sheep_effects(goose_copy, location)
         
         # Rhino/Sheep effects on existing critters
+        self._apply_rhino_sheep_effects(critter, location)
+    
+    def _apply_rhino_sheep_effects(self, entering_critter: Critter, location: Location):
+        """Apply Rhino/Sheep effects when a critter enters a location"""
         for existing in location.critters[:-1]:  # Exclude the just-added critter
             if existing.type == CritterType.RHINO:
                 buff_amount = 1
-                if critter.type == CritterType.PENGUIN:
+                if entering_critter.type == CritterType.PENGUIN:
                     # Penguin swaps mushroom buff to lifespan buff
                     existing.current_lifespan += buff_amount
                 else:
@@ -130,7 +147,7 @@ class GameEngine:
             
             elif existing.type == CritterType.SHEEP:
                 buff_amount = 1
-                if critter.type == CritterType.PENGUIN:
+                if entering_critter.type == CritterType.PENGUIN:
                     # Penguin swaps lifespan buff to mushroom buff
                     existing.current_mushrooms_per_day += buff_amount
                 else:
@@ -168,6 +185,7 @@ class GameEngine:
             
             for critter in location.critters:
                 can_collect = True
+                collection_amount = 0
                 
                 # Crocodile: Can only collect when alone
                 if critter.type == CritterType.CROCODILE and len(location.critters) > 1:
@@ -178,7 +196,12 @@ class GameEngine:
                     can_collect = False
                 
                 if can_collect:
-                    daily_collection += critter.current_mushrooms_per_day
+                    # Calculate how much this critter can collect (limited by remaining mushrooms)
+                    available_mushrooms = max(0, location.mushrooms - daily_collection)
+                    collection_amount = min(critter.current_mushrooms_per_day, available_mushrooms)
+                    if collection_amount > 0:
+                        critter.mushrooms_collected += collection_amount
+                        daily_collection += collection_amount
             
             location.mushrooms = max(0, location.mushrooms - daily_collection)
     
@@ -208,6 +231,8 @@ class GameEngine:
                 self.locations[current_loc_id].critters.remove(gopher)
                 gopher.current_location_id = next_loc_id
                 target_location.critters.append(gopher)
+                # Apply Rhino/Sheep effects when Gopher enters new location
+                self._apply_rhino_sheep_effects(gopher, target_location)
             else:
                 # Next location is full, try to add to queue
                 if len(self.critter_queue) < 8:
@@ -251,4 +276,50 @@ class GameEngine:
             'game_over': self.game_over,
             'game_won': self.game_won,
             'total_mushrooms': sum(loc.mushrooms for loc in self.locations)
+        }
+    
+    def get_all_critters(self) -> List[Critter]:
+        """Get all critters in the game (deployed and in queue)"""
+        all_critters = []
+        
+        # Add critters from locations
+        for location in self.locations:
+            all_critters.extend(location.critters)
+        
+        # Add critters from queue
+        all_critters.extend(self.critter_queue)
+        
+        return all_critters
+    
+    def get_collection_summary(self) -> dict:
+        """Get summary of mushrooms collected by each critter type"""
+        all_critters = self.all_critters_ever
+        
+        # Group by critter type and sum collections
+        type_summary = {}
+        individual_summary = []
+        
+        for critter in all_critters:
+            critter_type = critter.type.value.title()
+            
+            # Add to type summary
+            if critter_type not in type_summary:
+                type_summary[critter_type] = {'count': 0, 'total_collected': 0, 'critters': []}
+            
+            type_summary[critter_type]['count'] += 1
+            type_summary[critter_type]['total_collected'] += critter.mushrooms_collected
+            type_summary[critter_type]['critters'].append(critter)
+            
+            # Add to individual summary
+            individual_summary.append({
+                'type': critter_type,
+                'collected': critter.mushrooms_collected,
+                'final_stats': f"{critter.current_mushrooms_per_day}/{critter.current_lifespan}",
+                'location': critter.current_location_id
+            })
+        
+        return {
+            'by_type': type_summary,
+            'individual': individual_summary,
+            'total_collected': sum(critter.mushrooms_collected for critter in all_critters)
         }
